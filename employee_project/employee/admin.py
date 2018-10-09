@@ -1,7 +1,5 @@
 from django.contrib import admin
 
-from .models import Employee, Expense, Project
+from .models import Employee
 
 admin.site.register(Employee)
-admin.site.register(Expense)
-admin.site.register(Project)

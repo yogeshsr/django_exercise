@@ -25,13 +25,35 @@ SECRET_KEY = '+k#y*8a6&$2g57%b7#dyre)8%yp&o9(edz%d)y6nc=qlrj2os+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# chane leve to DEBUG for development env
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+        },
+    }
+}
+
+
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'employee.apps.EmployeeConfig',
+    'expense.apps.ExpenseConfig',
+    'project.apps.ProjectConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
