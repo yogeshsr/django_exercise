@@ -26,6 +26,7 @@ SECRET_KEY = '+k#y*8a6&$2g57%b7#dyre)8%yp&o9(edz%d)y6nc=qlrj2os+'
 DEBUG = True
 
 # chane leve to DEBUG for development env
+# https://docs.djangoproject.com/en/2.1/topics/logging/
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -39,6 +40,10 @@ LOGGING = {
         'django.db.backends': {
             'handlers': ['console'],
             'level': 'ERROR',
+        },
+        '': {
+            'handlers': ['console'],
+            'level': 'INFO',
         },
     }
 }

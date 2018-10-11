@@ -1,0 +1,9 @@
+{% block content %}
+    <h2>Employees</h2>
+    <h2><a href="{% url 'new_employee' %}">New</a></h2>
+    <ul>
+        {% for employee in object_list %}
+            <li><a href="{% url 'employee_details' employee.id %}">{{ employee.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
