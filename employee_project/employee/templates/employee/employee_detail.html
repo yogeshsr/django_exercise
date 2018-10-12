@@ -1,9 +1,15 @@
-<h1><p>Employee name: {{ employee.name }}</p></h1>
+{% extends "base_template.html" %}
 
-<h2><p>Employee projects:</p></h2>
-<ul>
-	{% for project in employee.project_set.all %}
-	    <li>{{ project.project_name }}</li>
-	{% endfor %}
-</ul>
+{% block content %}
 
+
+	<h1><p>Employee name: {{ employee.name }}</p></h1>
+
+	<h2><p>Employee projects:</p></h2>
+	<ul>
+		{% for project in employee.project_set.all %}
+		    <li>{{ project.project_name }}</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

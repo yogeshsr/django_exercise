@@ -20,7 +20,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
     # shorcut
-    # return render(request, 'employee/index.html', context)
+    # return render(request, 'employee/employee_list.html', context)
 
 
 

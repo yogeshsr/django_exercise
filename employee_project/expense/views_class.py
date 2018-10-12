@@ -9,9 +9,13 @@ from rest_framework import generics
 class ExpenseListClassView(APIView):
 
     def get(self, request, format=None):
+        
         expenses = Expense.objects.all()
+        
         serializer = ExpenseSerializer(expenses, many=True)
+        
         return Response(serializer.data)
+
 
 class ExpenseList(mixins.ListModelMixin,
                   mixins.CreateModelMixin,

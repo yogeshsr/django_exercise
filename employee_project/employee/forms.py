@@ -10,4 +10,4 @@ from .models import Employee
 class EmployeeForm(ModelForm):
     class Meta:
     	model = Employee
-    	fields = ['id','name']
+    	fields = ['id','name', 'city']
